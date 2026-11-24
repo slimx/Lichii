@@ -17,7 +17,7 @@ on:
         default: false
   push:
     branches:
-      - nx2-experimental
+      - nx2-1
     # A binary only changes when build inputs change; docs-only pushes skip the build.
     paths:
       - "src/**"
@@ -33,9 +33,6 @@ on:
       - "cpmfile.json"
       - "*.profdata"
       - ".github/workflows/release-binaries.yml"
-  # Refreshes nx2's compiler caches, which every branch's build restores (see docs/CI.md).
-  schedule:
-    - cron: "17 3 * * *"
 
 permissions:
   contents: read
@@ -124,19 +121,8 @@ jobs:
           - platform: linux-x86_64-pgo
             runner: ubuntu-24.04
             pgo: true
-          - platform: windows-x86_64
-            runner: windows-2022
-          - platform: windows-x86_64-pgo
-            runner: windows-2022
-            pgo: true
-            profile: lichii-windows.profdata
-          - platform: linux-aarch64
-            runner: ubuntu-24.04-arm
-          - platform: linux-aarch64-pgo
-            runner: ubuntu-24.04-arm
-            pgo: true
-          - platform: macos-arm64
-            runner: macos-15
+
+            
 
     steps:
       - name: Check out source
