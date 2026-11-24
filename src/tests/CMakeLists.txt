@@ -68,6 +68,7 @@ add_executable(tests
     video_core/vulkan_address_map.cpp
     video_core/texture_rect_descriptor.cpp
     video_core/join_whole_copy.cpp
+    video_core/mip_chain_overlap.cpp
     video_core/padded_square.cpp
     audio_core/batch_decoder.cpp
     audio_core/adpcm_decode.cpp
@@ -244,6 +245,7 @@ add_executable(tests
     common/host_memory_failure.cpp
     common/host_memory_test_access.h
     core/host_memory_failure.cpp
+    common/library_exceptions.cpp
     common/memory_detect.cpp
     common/multi_level_page_table.cpp
     common/nextendo.cpp
